@@ -1,8 +1,11 @@
 AAAWebsite::Application.routes.draw do
 
-  root :to => 'aaa_core#index'
+  devise_for :users
 
-  match '/events', :to => "aaa_core#events"
+  resources :events
+
+
+  root :to => 'aaa_core#index'
 
   match '/shop', :to => "aaa_core#shop"
 
